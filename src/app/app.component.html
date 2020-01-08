@@ -1,10 +1,16 @@
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+<nav class="navbar navbar-expand-sm navbar-light shadow-sm">
+
+  <a class="navbar-brand text-center" href="#">OMDB Search</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <app-search (searchQuerySubmit)="onSearchQueryInput($event)"></app-search>
   </div>
+
+</nav>
+<div class="container">
+  <div *ngIf="showImdbCard" class="card text-center mt-2 bg-light welcome-card">Welcome to omdb movie search</div>
+</div>
+
+<div class="container-fluid">
+  <app-movies [movies]="movies"></app-movies>
 </div>

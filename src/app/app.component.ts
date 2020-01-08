@@ -1,10 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SearchService } from './services/search.service';
+import { Movie } from './models/movie.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'omdb-search';
+  movies: Movie[] = []
+  showImdbCard: boolean = true;
+
+  constructor(private searchService: SearchService) { }
+
+  ngOnInit() {
+
+  }
+
+  onSearchQueryInput(searchQuery: string) {
+    this.showImdbCard = false
+    this.searchService.getMovies(searchQuery.split(' ').join('+')).subscribe(movies => this.movies = movies)
+  }
 }

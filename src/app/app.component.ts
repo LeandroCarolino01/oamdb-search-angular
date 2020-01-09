@@ -10,7 +10,7 @@ import { Movie } from './models/movie.model';
 export class AppComponent implements OnInit {
   title = 'omdb-search';
   movies: Movie[] = []
-  showImdbCard: boolean = true;
+ 
 
   constructor(private searchService: SearchService) { }
 
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   }
 
   onSearchQueryInput(searchQuery: string) {
-    this.showImdbCard = false
+   
     this.searchService.getMovies(searchQuery.split(' ').join('+')).subscribe(movies => this.movies = movies)
   }
 }

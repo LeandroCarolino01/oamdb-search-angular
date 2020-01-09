@@ -9,4 +9,16 @@
 
 .welcome-card{
     padding:20px;
+    width: 52rem;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+    background: #e6eff3;
+    border:none;
+    font-size: 14px;
 }
+
+.title{
+    margin-left: 155px;
+}
+

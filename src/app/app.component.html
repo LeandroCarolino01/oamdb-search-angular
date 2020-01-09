@@ -1,16 +1,24 @@
 <nav class="navbar navbar-expand-sm navbar-light shadow-sm">
 
-  <a class="navbar-brand text-center" href="#">OMDB Search</a>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <app-search (searchQuerySubmit)="onSearchQueryInput($event)"></app-search>
-  </div>
+ 
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+          <a class="navbar-brand title" href="#">OMDB Search</a>
+        </div>
+        <div class="col-xs-6">
+          <app-search (searchQuerySubmit)="onSearchQueryInput($event)"></app-search>
+        </div>
+    </div>
+</div>
 
 </nav>
-<div class="container">
-  <div *ngIf="showImdbCard" class="card text-center mt-2 bg-light welcome-card">Welcome to omdb movie search</div>
-</div>
 
-<div class="container-fluid">
-  <app-movies [movies]="movies"></app-movies>
-</div>
+<app-movies *ngIf="movies?.length; else nomovies" [movies]="movies"></app-movies>
+
+<ng-template #nomovies>
+  <div class="container">
+    <div class="card text-center mt-4 welcome-card" >Welcome to OMDB Search, search something in the bar above!</div>
+  </div>
+</ng-template>
+

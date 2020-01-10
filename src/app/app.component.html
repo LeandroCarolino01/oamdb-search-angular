@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-light shadow-sm">
+<!-- <nav class="navbar navbar-expand-sm navbar-light shadow-sm">
 
  
   <div class="container">
@@ -12,13 +12,38 @@
     </div>
 </div>
 
-</nav>
+</nav> -->
+<!-- <nav>
+  <div>
+    <h1>OMDB search</h1>
+  </div>
+  <div>
+    <app-search (searchQuerySubmit)="onSearchQueryInput($event)"></app-search>
+  </div>
+</nav> -->
+
+<div class="wrapper shadow-sm">
+  <div class="row">
+    <div class="col-sm-6 text-center">
+      <h3 class="title">OMDB Search</h3>
+    </div>
+    <div class="col-sm-6  text-center">
+      <app-search (searchQuerySubmit)="onSearchQueryInput($event)"></app-search>
+    </div>
+  </div>
+</div>
+
 
 <app-movies *ngIf="movies?.length; else nomovies" [movies]="movies"></app-movies>
 
 <ng-template #nomovies>
-  <div class="container">
+  <!-- <div class="container">
     <div class="card text-center mt-4 welcome-card" >Welcome to OMDB Search, search something in the bar above!</div>
+  </div> -->
+  <div class="welcome-card">
+    this is a test!
   </div>
 </ng-template>
+
+
 

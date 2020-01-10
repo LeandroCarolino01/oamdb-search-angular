@@ -9,8 +9,10 @@
 
 .welcome-card{
     padding:20px;
-    width: 52rem;
+    width: 48rem;
     margin: 0 auto; 
+    margin-top:20px;
+    text-align: center;
     float: none; 
     margin-bottom: 10px; 
     background: #e6eff3;
@@ -19,6 +21,21 @@
 }
 
 .title{
-    margin-left: 155px;
+    margin-left: 60px;
 }
+
+nav{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+nav > div{
+    padding:1em;
+}
+
+.wrapper{
+    padding:10px;
+}
+
+
 
